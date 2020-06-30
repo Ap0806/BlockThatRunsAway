@@ -12,13 +12,13 @@ a.addEventListener('mouseover', e => {
     a.style.left = getRndInteger(130,1350) + "px";
     score+=10;
     scoreCard.innerHTML = "Score: " + score;
-    if(score == 100){
+    if(score == 1200){
         outer.style.backgroundColor = "white";
         outer.style.border = "5px solid black";
         outer.style.textAlign = "center";
         outer.style.fontFamily = "Muli";
         outer.style.fontSize = "5em";
-        outer.style.lineHeight - "50vw";
+        outer.style.lineHeight - "20vw";
         outer.style.transition = "background-color 0.2s, border 0.2s";
         outer.innerHTML = "You won!";
         return;
