@@ -5,150 +5,136 @@ h2{
     color: white;
     padding: 0;
     top: -10px;
+    font-size: 2em;
   }
 
 body{
   background-color: black;
 }
   
-  #info{
-    text-align:center;
-    padding: 5px 5px 5px 5px;
-    font-family: 'Titillium Web';
-    opacity: 0;
-    height: 0px;
-    transition: height 0.2s;
-    color: white;
-  }
+#info{
+  text-align:center;
+  padding: 5px 5px 5px 5px;
+  font-family: 'Titillium Web';
+  opacity: 0;
+  height: 0px;
+  transition: height 0.2s;
+  color: white;
+  font-size: 1.2em;
+}
 
-  #tooltip{
-    display:none;
-    width: 5vw;
-    height:2vw;
-    background-color: grey;
-    border-radius: 50%;
-    color:black;
-  }
+#button:hover + #tooltip{
+  display:block;
+}
 
-  #button:hover + #tooltip{
-    display:block;
-  }
+#score, #timer{
+  position: fixed;
+  top:20px;
+  color: white;
+  text-align:right;
+  margin: 0;
+  font-size: 2em;
+  font-family: 'Muli', sans-serif;
+}
 
-  #score{
-    color: white;
-    text-align:right;
-    position: absolute;
-    margin: 0;
-    font-size: 2em;
-    font-family: 'Muli', sans-serif;
-  }
+#timer{
+  left:80vw;
+}
 
-  /* p{
-    text-align:center;
-    font-size: 3em;
-    color: rgb(90, 231, 149);
-    font-family: 'Muli', sans-serif;
-    position: absolute;
-    padding:0;
-    margin:0;
-  } */
+#playbutton{
+  background-color: black;
+  border: white;
+  color: rgb(90, 231, 149);
+  font-size: 2em;
+  font-family: 'Muli';
+  width: 300px;
+  height: 100px;
+  border-radius: 5px;
+  /* padding: 50px 100px 50px 100px; */
+  margin-left: 36vw;
+  margin-top: 27vh;
+  position:absolute;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s, color 0.2s;
+}
 
-  #playbutton{
-    background-color: black;
-    border: white;
-    color: rgb(90, 231, 149);
-    font-size: 2em;
-    font-family: 'Muli';
-    width: 300px;
-    height: 100px;
-    border-radius: 5px;
-    /* padding: 50px 100px 50px 100px; */
-    margin-left: 32vw;
-    margin-top: 20vw;
-    position:absolute;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
-  }
 
-  p{
-    margin-left: 110px;
-  }
+#playbutton:hover{
+  background-color: white;
+  color: black;
+  transition: background-color 0.2s, color 0.2s;
+}
 
-  #playbutton:hover{
-    background-color: white;
-    color: black;
-    transition: background-color 0.2s, color 0.2s;
-  }
+#sideMessage{
+  font-size: 3em;
+  font-family: "Titillium Web";
+  margin-left: 50px;
+  margin-top:-20px;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  text-align: justify;
+  word-spacing: 1vh;
+  letter-spacing: 1vw;
+}
 
-  #sideMessage{
-    list-style: none;
-    font-size: 1em;
-    font-family: "Titillium Web";
-    margin-left: 50px;
-    margin-top:-20px;
-    float:left;
-    color: white;
-    position: absolute;
-  }
 
-  #bigcontain{
-      display:inline;
-      justify-content: left;
-      margin: auto;
-  }
 
+#bigcontain{
+  display:inline;
+  justify-content: left;
+  margin: auto;
+}
+
+h2:hover{
+  transition-duration: 0.2s;
+  color:red;
+}
+ 
+h2:hover + #info{
+  transition:height 0.2s, opacity 0.5s;
+  height:20px;
+  opacity: 1;
+}
   
-  h2:hover{
-    transition-duration: 0.2s;
-    color:red;
-  }
+#outer{
+  background-color:black;
+  height : 50vw;
+  width : 90vw;
+  margin-left: 4vw;
+  position: fixed;
+  top: 120px;
+}
   
-  h2:hover + #info{
-    transition:height 0.2s, opacity 0.5s;
-    height:20px;
-    opacity: 1;
-  }
-  
-  #outer{
-    background-color:black;
-    height : 50vw;
-    width : 90vw;
-    margin-left: 8vw;
-  }
-  
-  #inner{
-    top: 100px;
-    left: 130px;
-    position: absolute;
-    margin-top: 20px;
-    margin-left: 10px;
-    background-color: white;
-    width: 5vw;
-    height: 5vw;
-  }
-
-.preloader {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	background: url(preloader.gif) center no-repeat #fff;
+#inner{
+  top: 100px;
+  left: 130px;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 10px;
+  background-color: white;
+  width: 5vw;
+  height: 5vw;
 }
 
 
 button{
-    height: 50px;
-    width:50px;
-    border-radius:100%;
-    border-top: 10px rgb(4, 87, 112);
-    border-right: 10px rgb(4,87,112);
-    background-color: aquamarine;
-    font-size: 2em;
-    padding:0;
-    position:fixed;
-    outline:none;
+  height: 50px;
+  width:50px;
+  border-radius:100%;
+  border-color: black;
+  background-color: black;
+  font-size: 2em;
+  color: aquamarine;
+  padding:0;
+  position:fixed;
+  outline:none;
 }
 
 button:active:hover{
-    border:none;
-    outline:none;
+  border:none;
+  outline:none;
+  transition: background-color 2s;
 }
+
