@@ -11,115 +11,9 @@ h2{
 body{
   background-color: black;
 }
-  
-#info{
-  text-align:center;
-  padding: 5px 5px 5px 5px;
-  font-family: 'Titillium Web';
-  opacity: 0;
-  height: 0px;
-  transition: height 0.2s;
-  color: white;
-  font-size: 1.2em;
-}
 
-#button:hover + #tooltip{
-  display:block;
-}
-
-#score, #timer{
-  position: fixed;
-  top:20px;
-  color: white;
-  text-align:right;
-  margin: 0;
-  font-size: 2em;
-  font-family: 'Muli', sans-serif;
-}
-
-#timer{
-  left:80vw;
-}
-
-#playbutton{
-  display:block;
-  background-color: black;
-  border: white;
-  color: rgb(90, 231, 149);
-  font-size: 2em;
-  font-family: 'Muli';
-  width: 300px;
-  height: 100px;
-  border-radius: 5px;
-  margin-left: 36vw;
-  margin-top: 27vh;
-  position:absolute;
-  cursor: pointer;
-  text-align: center;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-
-#playbutton:hover, .level:hover{
-  background-color: white;
-  color: black;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-#sideMessage{
-  font-size: 3em;
-  font-family: "Titillium Web";
-  margin-left: 50px;
-  margin-top:-20px;
-  color: white;
-  position: fixed;
-  bottom: 0;
-  text-align: justify;
-  word-spacing: 1vh;
-  letter-spacing: 1vw;
-}
-
-
-
-#bigcontain{
-  display:inline;
-  justify-content: left;
-  margin: auto;
-}
-
-h2:hover{
-  transition-duration: 0.2s;
-  color:red;
-}
- 
-h2:hover + #info{
-  transition:height 0.2s, opacity 0.5s;
-  height:20px;
-  opacity: 1;
-}
-  
-#outer{
-  background-color:black;
-  height : 50vw;
-  width : 90vw;
-  margin-left: 4vw;
-  position: fixed;
-  top: 120px;
-}
-  
-#inner{
-  top: 100px;
-  left: 130px;
-  position: absolute;
-  margin-top: 20px;
-  margin-left: 10px;
-  background-color: white;
-  width: 5vw;
-  height: 5vw;
-}
-
-
-button{
+.butt{
+  display: none;
   height: 50px;
   width:50px;
   border-radius:100%;
@@ -132,11 +26,138 @@ button{
   outline:none;
 }
 
-button:active:hover{
+.butt:active:hover{
   border:none;
   outline:none;
   transition: background-color 2s;
+  background-color: white;
 }
+
+
+#dialogueBox{
+  background-color: aquamarine;
+  position: absolute;
+  display: none;
+  height:30vh;
+  width: 40vh;
+  padding: 50px 100px;
+  left: 40vw;
+  top: 31vh;  
+}
+ 
+#dialogueBox p, #dialogueBox button{
+  font-family: "Titillium Web", sans-serif;
+  font-size: 1.75em;
+}
+
+#dialogueBox button{
+  display:inline;
+  width: 100px;
+  background-color: black;
+  color: aquamarine;
+  margin-left:20px;
+}
+
+#info{
+  text-align:center;
+  font-family: 'Titillium Web';
+  opacity: 0;
+  height: 0px;
+  margin-top: -20px;
+  transition: height 0.2s;
+  color: white;
+  font-size: 1.2em;
+}
+
+/* #button:hover + #tooltip{
+  display:block;
+} */
+
+#score, #timer{
+  position: fixed;
+  top:20px;
+  color: white;
+  text-align:right;
+  margin: 0;
+  font-size: 2em;
+  font-family: 'Muli', sans-serif;
+  display:none;
+}
+#score{
+  left: 5vw;
+}
+#timer{
+  left:80vw;
+}
+
+#playbutton{
+  background-color: black;
+  border: white;
+  color: rgb(90, 231, 149);
+  font-size: 2.2em;
+  font-family: 'Muli';
+  width: 300px;
+  height: 100px;
+  border-radius: 5px;
+  display: block;
+  margin-left: 40vw;
+  margin-top: 31vh;
+  position:fixed;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+#playbutton p{
+  bottom: 10px;
+}
+
+
+#playbutton:hover{
+  background-color: white;
+  color: black;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+#sideMessage{
+  font-size: 3em;
+  font-family: "Titillium Web";
+  margin-left: 50px;
+  /* margin-top:-10px; */
+  color: white;
+  position: fixed;
+  bottom: -30px;
+  text-align: justify;
+  word-spacing: 1vh;
+  letter-spacing: 1vw;
+}
+
+
+h2:hover{
+  transition-duration: 0.2s;
+  color:red;
+}
+ 
+h2:hover + #info{
+  transition:height 0.2s, opacity 0.5s;
+  height:20px;
+  opacity: 1;
+}
+  
+#inner{
+  top: 100px;
+  left: 130px;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 10px;
+  background-color: white;
+  width: 5vw;
+  height: 5vw;
+  display:none;
+}
+
+
+
 
 @keyframes upanddown{
   0% {
@@ -154,10 +175,10 @@ button:active:hover{
 
 #levelsDiv{
   display: none;
-  position: absolute;
+  position: fixed;
   list-style: none; 
-  margin-top: 27vh;
-  margin-left:30px;
+  margin-top: 31vh;
+  margin-left:12vw;;
 }
 
 
@@ -173,4 +194,18 @@ button:active:hover{
   margin-left:10vw;
   text-align: center;
   transition: background-color 0.2s, color 0.2s;
+}
+
+.level:hover{
+  background-color: white;
+  color: black;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+@keyframes dropDown{
+  0%{margin-top: 0vh;}
+  60%{margin-top:400px;}
+  75%{margin-top:390px;}
+  95%{margin-top:400px;}
+  100%{margin-top:400px;}
 }
