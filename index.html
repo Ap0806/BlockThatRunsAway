@@ -3,12 +3,12 @@
 <head>
 
   <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-  
+
   <title>An odd game </title>
   <meta charset = "UTF-8">
   <meta name = "viewport" content = "width = 1000px maximum-scale=1">
   <meta name = "author" content = "Aparna Rajeev">
-
+  <link rel = "icon" type = "image/png" href = "menu.png"/>
   <link rel ="stylesheet" type ="text/css" href = "sscreen.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Muli:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap" rel="stylesheet">
@@ -20,14 +20,15 @@
       <p>Move your cursor over the <b>white blocks</b> to gain a point, but <strong>BEWARE OF THE RED BLOCKS AND THE TIMER! <br> </strong>
       You can pick from three levels of difficulty.</p>
     </div>
-      <div id = "playbutton">
+      <div id = "playbutton" onclick = "playButtonClick()">
         <p>PLAY</p>
       </div>
       <ul id = "levelsDiv" class = "content">
-        <li class = "level" onclick = "startGame('easy')">Easy</li>
-        <li class = "level" onclick = "startGame('med')">Medium</li>
-        <li class = "level" onclick = "startGame('hard')">Hard</li>
+        <li class = "level" onclick = "startGame('easy')" onmouseover = "descriptionOfLevels('e')" onmouseout = "clearMethod()">Easy</li>
+        <li class = "level" onclick = "startGame('med')" onmouseover = "descriptionOfLevels('m')" onmouseout = "clearMethod()">Medium</li>
+        <li class = "level" onclick = "startGame('hard')" onmouseover = "descriptionOfLevels('h')" onmouseout = "clearMethod()">Hard</li>
       </ul>
+      <p id = "description"></p>
       <p id = "score" class = "content">Score: 0</p>
     <p id = "timer" class = "content"></p>
     <div id = "inner" class = "content">
@@ -42,6 +43,25 @@
   <!-- ADD EASY, MEDIUM AND HARD BUTTONS HERE -->
   <!-- ADD TITLE FOR GAMESCREEN.HTML TOO -->
   <p id = "sideMessage">HOVER OVER THE TITLE FOR THE RULES!</p>
+  <script>
+    var p = document.getElementById("description");
+    function descriptionOfLevels(levelID){      
+      p.style.display = "block";
+      if(levelID == 'e'){
+        p.innerHTML = "You need to score 1200 in 1:30.";
+      }
+      else if(levelID == "m"){
+        p.innerHTML = "You need to score 900 in 1:10. Beware - the red blocks move.";
+      }
+      else{
+        p.innerHTML = "You need to score 700 in 1:00 and yeah, you guessed it, the red blocks move.";
+      }
+    }
+
+    function clearMethod(){
+      p.innerHTML = "";
+     }
+  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src = "gamescreen.js"></script>
   <script src="/__/firebase/7.15.5/firebase-app.js"></script>

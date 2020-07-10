@@ -2,6 +2,7 @@ var whiteBox = document.getElementById("inner");
 var outer;
 var scoreCard = document.getElementById("score");
 var backButton = document.getElementsByClassName('butt')[0];
+var levelDescr = document.getElementById("description");
 var color = 0;
 var score = 0;
 var forDialogueDrop = 0;
@@ -20,7 +21,7 @@ var dialogueBox = document.getElementById("dialogueBox");
 var sideText = document.getElementById("sideMessage");
 
 
-playB.onclick = function(){
+function playButtonClick(){
   levelDiv.style.display = "block";
   playB.style.display = "none";
   backButton.style.display = "block";
@@ -33,7 +34,7 @@ function startGame(levelOfDiff){
         isAnimated = 't';
         redSpeed = '10s';
         min = 1;
-        sec = 30;
+        sec = 10;
     }
     else if(levelOfDiff == 'hard'){
         setting = 60;
@@ -50,9 +51,10 @@ function startGame(levelOfDiff){
         isAnimated = 'f';
         redSpeed = '0';
         min = 1;
-        sec = 40;
+        sec = 30;
     }
     forDialogueDrop = 1;
+    levelDescr.style.display = "none";
     levelDiv.style.display = "none";
     whiteBox.style.display = "block";
     scoreCard.style.display = "block";
@@ -70,12 +72,12 @@ whiteBox.addEventListener('mouseover', e => {
     whiteBox.style.left = getRndInteger(130,1250) + "px";
     score+=10;
     scoreCard.innerHTML = "Score: " + score;
-    if(score == 1200){
+    if(score == finalTarget){
         winningText();
         return;
     }
 
-    if(score % 100 == 0 && color <= 239 && score !== 0 && score <= 1000){
+    if(score % 100 == 0 && color <= 239 && score !== 0 && score <= (finalTarget - 200)){
         color = color + 20;
         body.style.transition = "background-color 0.5s";
         backButton.style.transition = "background-color 0.5s";
@@ -83,11 +85,17 @@ whiteBox.addEventListener('mouseover', e => {
         backButton.style.backgroundColor = "rgb("+ color + "," + color + "," + color + ")";
 
     }    
-    else if(score > 1000){
+    else if(score > (finalTarget - 200)){
         body.style.transition = "background-color 0.5s";
         backButton.style.transition = "background-color 0.5s";
-        body.style.backgroundColor = "rgb(255,255,255)";
-        backButton.style.backgroundColor = "rgb(255,255,255)";
+        if(finalTarget == 700){
+            body.style.backgroundColor = "rgb(255,255,255)";
+            backButton.style.backgroundColor = "rgb(255,255,255)";
+        }
+        else{
+            body.style.backgroundColor = "rgb(250,250,250)";
+            backButton.style.backgroundColor = "rgb(250,250,250)";
+        }
         heading.style.color = "black";
         info.style.color = "black";
         scoreCard.style.color = "black";
@@ -180,8 +188,8 @@ function winningText(){
     outer.style.fontFamily = "Muli";
     outer.style.fontSize = "5em";
     outer.style.padding = "0";
-    outer.style.marginLeft = "30vw";
-    outer.style.transition = "background-color 0.2s, border 0.2s, color 0.2s";
+    outer.style.marginLeft = "35vw";
+    outer.style.transition = "background-color 1s, border 1s, color 1s";
     outer.style.paddingTop = "100px";
     outer.style.color = "white";
     outer.innerHTML = "YOU WON!";
@@ -204,7 +212,6 @@ function restart(){
     if(forDialogueDrop == 0){
         playB.style.display = "block";
         levelDiv.style.display = "none";
-
         return;
     }
     else if(forDialogueDrop == 2){
