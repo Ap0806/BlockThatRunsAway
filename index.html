@@ -8,13 +8,15 @@
   <meta charset = "UTF-8">
   <meta name = "viewport" content = "width = 1000px maximum-scale=1">
   <meta name = "author" content = "Aparna Rajeev">
+  <meta name = "description" content = "Win the game by moving your cursor over the white block while avoiding the red blocks. Up 
+  for the challenge?"/>
   <link rel = "icon" type = "image/png" href = "menu.png"/>
   <link rel ="stylesheet" type ="text/css" href = "sscreen.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Muli:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap" rel="stylesheet">
 </head>
 <body id = "body">
-  <button onclick = "restart()" class = "butt"><b><</b></button>
+  <button onclick = "restart()" class = "butt" title="Back"><b><</b></button>
     <h2 id = "header">The Block That Runs Away</h2>
     <div id = "info">
       <p>Move your cursor over the <b>white blocks</b> to gain a point, but <strong>BEWARE OF THE RED BLOCKS AND THE TIMER! <br> </strong>
@@ -29,7 +31,7 @@
         <li class = "level" onclick = "startGame('hard')" onmouseover = "descriptionOfLevels('h')" onmouseout = "clearMethod()">Hard</li>
       </ul>
       <p id = "description"></p>
-      <p id = "score" class = "content">Score: 0</p>
+      <p id = "score" class = "content">Score: 0<br>Final Target:</p>
     <p id = "timer" class = "content"></p>
     <div id = "inner" class = "content">
     </div>

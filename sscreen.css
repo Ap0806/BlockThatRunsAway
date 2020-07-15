@@ -1,68 +1,45 @@
-h2{
-    text-align: center;
-    font-family: 'Titillium Web', sans-serif;
-    margin:0;
-    color: white;
-    padding: 0;
-    top: -10px;
-    font-size: 2em;
-  }
-
 body{
   background-color: black;
 }
 
-.butt{
-  display: none;
-  height: 50px;
-  width:50px;
-  border-radius:100%;
-  border-color: black;
-  background-color: black;
-  font-size: 2em;
-  color: aquamarine;
-  padding:0;
-  position:fixed;
-  outline:none;
-}
-
-.butt:active:hover{
-  border:none;
-  outline:none;
-  transition: background-color 2s;
+/*
+__________________________________White block_________________________________________________
+*/
+  
+#inner{
+  top: 100px;
+  left: 130px;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 10px;
   background-color: white;
+  width: 5vw;
+  height: 5vw;
+  display:none;
+}
+/*
+_______________________play button, "hover message", heading___________________________________
+*/
+
+h2{
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  margin:0;
+  color: white;
+  padding: 0;
+  top: -10px;
+  font-size: 2em;
 }
 
-
-#dialogueBox{
-  background-color: aquamarine;
-  position: relative;
-  display: none;
-  height:30vh;
-  width: 40vh;
-  padding: 50px 100px;
-  left: 35vw;
-  margin-top:200px;
+h2:hover{
+  transition-duration: 0.2s;
+  color:red;
 }
  
-#dialogueBox p, #dialogueBox button{
-  color:black;
-  font-family: "Titillium Web", sans-serif;
-  font-size: 1.75em;
-}
-
-#dialogueBox button{
-  display:inline;
-  padding: 0px 20px;
-  background-color: black;
-  color: aquamarine;
-  margin-left:40px;
-  transition: border-radius 0.2s;  
-}
-
-#dialogueBox button:hover{
-  border-top-left-radius: 20%;
-  border-bottom-right-radius: 20%;
+h2:hover + #info{
+  transition:height 0.2s, opacity 0.5s;
+  height:20px;
+  opacity: 1;
 }
 
 #info{
@@ -74,27 +51,6 @@ body{
   transition: height 0.2s;
   color: white;
   font-size: 1.2em;
-}
-
-/* #button:hover + #tooltip{
-  display:block;
-} */
-
-#score, #timer{
-  position: fixed;
-  top:20px;
-  color: white;
-  text-align:right;
-  margin: 0;
-  font-size: 2em;
-  font-family: 'Muli', sans-serif;
-  display:none;
-}
-#score{
-  left: 5vw;
-}
-#timer{
-  left:80vw;
 }
 
 #playbutton{
@@ -126,6 +82,7 @@ body{
   transition: background-color 0.4s, color 0.4s;
 }
 
+
 #sideMessage{
   font-size: 3em;
   font-family: "Titillium Web";
@@ -139,53 +96,98 @@ body{
   letter-spacing: 1vw;
 }
 
+/*
+_____________________________Back button - button + dialogue box________________________
+*/
 
-h2:hover{
-  transition-duration: 0.2s;
-  color:red;
+.butt{
+  display: none;
+  height: 50px;
+  width:50px;
+  border-radius:100%;
+  border-color: black;
+  background-color: black;
+  font-size: 2em;
+  color: aquamarine;
+  padding:0;
+  position:fixed;
+  outline:none;
+}
+
+.butt:hover{
+  border:none;
+  outline:none;
+  background-color: aquamarine;
+  color: black;  
+  transition: background-color 0.5s, color 0.5s;
+}
+
+
+#dialogueBox{
+  background-color: aquamarine;
+  position: relative;
+  display: none;
+  height:25vh;
+  width: 20vw;
+  padding: 5vw 10vw 10vw;
+  left: 30vw;
+  margin-top:15vh;
+  border: 5px solid black;
 }
  
-h2:hover + #info{
-  transition:height 0.2s, opacity 0.5s;
-  height:20px;
-  opacity: 1;
+#dialogueBox p, #dialogueBox button{
+  color:black;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 1.75em;
 }
-  
-#inner{
-  top: 100px;
-  left: 130px;
-  position: absolute;
-  margin-top: 20px;
-  margin-left: 10px;
-  background-color: white;
-  width: 5vw;
-  height: 5vw;
+
+#dialogueBox button{
+  display:inline;
+  padding: 0 2vw;
+  background-color: black;
+  color: aquamarine;
+  margin-left: 40px;
+  transition: border-radius 0.2s;  
+}
+
+#dialogueBox button:hover{
+  border-top-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+}
+
+/*
+__________________________Score + timer________________________________
+*/
+
+#score, #timer{
+  position: fixed;
+  top:20px;
+  color: white;
+  text-align:right;
+  margin: 0;
+  font-size: 2em;
+  font-family: 'Muli', sans-serif;
   display:none;
 }
-
-
-
-
-@keyframes upanddown{
-  0% {
-    top : 10vh;
-  }
-
-  50%{
-    top : 80vh;
-  }
-
-  100%{
-    top : 10vh;
-  }
+#score{
+  left: 80vw;
+}
+#timer{
+  left:80vw;
+  border-right: 10px double white;
+  padding-right: 2vh;
 }
 
-#levelsDiv{
-  display: none;
-  position: fixed;
-  list-style: none; 
-  margin-top: 31vh;
-  margin-left:12vw;;
+/*
+_____________________Level buttons_______________________________
+*/
+
+
+
+.level:hover{
+  background-color: white;
+  color: black;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .level, #description{
@@ -202,6 +204,14 @@ h2:hover + #info{
   transition: background-color 0.2s, color 0.2s;
 }
 
+#levelsDiv{
+  display: none;
+  position: fixed;
+  list-style: none; 
+  margin-top: 31vh;
+  margin-left:12vw;;
+}
+
 #description{
   background-color: black;
   color: white;
@@ -209,16 +219,29 @@ h2:hover + #info{
   top: 55vh;
 }
 
-.level:hover{
-  background-color: white;
-  color: black;
-  transition: background-color 0.2s, color 0.2s;
-}
 
+/*
+___________________________________ANIMATIONS_____________________________________________
+*/
 @keyframes dropDown{
   0%{margin-top: 0vh;}
-  60%{margin-top:200px;}
-  75%{margin-top:180px;}
-  95%{margin-top:200px;}
-  100%{margin-top:200px;}
+  60%{margin-top:15vh;}
+  75%{margin-top:14vh;}
+  95%{margin-top:15vh;}
+  100%{margin-top:15vh;}
+}
+
+
+@keyframes upanddown{
+  0% { 
+    top : 15vh;
+  }
+
+  50%{
+    top : 95vh;
+  }
+
+  100%{
+    top : 15vh;
+  }
 }
