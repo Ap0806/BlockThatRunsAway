@@ -1,4 +1,5 @@
-# **The Block That Runs Away**
+# **The Block That Runs Away** [![HitCount](http://hits.dwyl.com/parna86/BlockThatRunsAway.svg)](http://hits.dwyl.com/parna86/BlockThatRunsAway)
+
 
 I wanted to learn how mouse events and eventListeners worked in JavaScript. So I started out by creating a CodePen where a small white block movews when my mouse hovers over it. You can see it [here.](https://codepen.io/ParnaHere/pen/XWXemJQ)
 
