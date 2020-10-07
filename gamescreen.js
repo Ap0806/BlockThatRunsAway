@@ -125,15 +125,10 @@ function whiteBoxMoving(){
  */
 function createNewDiv() {
     var d = document.createElement("div");
-    d.style.width = "20px";
-    d.style.height = "20px";
-    d.style.backgroundColor = "red";
     d.className = "badBlocks";
-    d.style.position = "absolute";
     d.style.top = getRndInteger(20,85) + "vh";
     d.style.left = getRndInteger(10,82) + "vw";
     if(isAnimated == 't'){
-        console.log("WE ARE HERE WHY ARE YOU NOT MOVING");
         d.style.animation = "10s infinite upanddown";
     }
     document.getElementById("body").appendChild(d);
@@ -157,24 +152,16 @@ function losingText(){
     for(var i  = 0; i < bad.length; i++){
         bad[i].style.display = "none";
     }
+    outer.className = "finalText";
     body.appendChild(outer);
     inner.style.display = "none";
     timer.style.display = "none";
     scoreCard.style.display = "none";
     clearInterval(timerInterval);
-    outer.style.backgroundColor = "black";
+    outer.id = "outer";
     body.style.backgroundColor = "black";
     heading.style.color = "white";
     info.style.color = "white";
-    outer.style.textAlign = "center";
-    outer.style.position = "fixed";
-    outer.style.fontFamily = "Muli";
-    outer.style.fontSize = "5em";
-    outer.style.padding = "0";
-    outer.style.marginLeft = "30vw";
-    outer.style.transition = "background-color 0.2s, border 0.2s, color 0.2s";
-    outer.style.paddingTop = "100px";
-    outer.style.color = "white";
     outer.innerHTML = "Sorry, you lost. <br> Final Score : "+ score;
     backButton.style.backgroundColor = "rgb(0,0,0)";
     color = 0;
@@ -191,6 +178,7 @@ function winningText(){
     for(var i  = 0; i < bad.length; i++){
         bad[i].style.display = "none";
     }
+    outer.className = "finalText";
     body.appendChild(outer);
     inner.style.display = "none";
     timer.style.display = "none";
@@ -199,17 +187,7 @@ function winningText(){
     outer.id = "outer";
     heading.style.color = "white";
     info.style.color = "white";
-    outer.style.backgroundColor = "black";
     body.style.backgroundColor = "black";
-    outer.style.textAlign = "center";
-    outer.style.position = "fixed";
-    outer.style.fontFamily = "Muli";
-    outer.style.fontSize = "5em";
-    outer.style.padding = "0";
-    outer.style.marginLeft = "35vw";
-    outer.style.transition = "background-color 1s, border 1s, color 1s";
-    outer.style.paddingTop = "100px";
-    outer.style.color = "white";
     outer.innerHTML = "YOU WON!";
     backButton.style.backgroundColor = "rgb(0,0,0)";
     score = 0;
@@ -235,7 +213,6 @@ function restart(){
         return;
     }
     else if(forDialogueDrop == 2){
-        console.log("here");
         outer.style.display = "none";
         playB.style.display = "block";
         playB.style.transition = "display 1s";
